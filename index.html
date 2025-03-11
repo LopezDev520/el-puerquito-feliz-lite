@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificando...</title>
+</head>
+
+<body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var esMovil = window.innerWidth <= 768;
+
+            if (esMovil) {
+                window.location.href = '/movil/login';
+            } else {
+                window.location.href = '/escritorio/login';
+            }
+        });
+    </script>
+
+</body>
+
+</html>

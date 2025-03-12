@@ -7,6 +7,7 @@
     <title>Configuracion</title>
     <link rel="stylesheet" href="/escritorio/css/layout.css">
     <link rel="stylesheet" href="/escritorio/css/configuracion.css">
+    <link rel="stylesheet" href="/escritorio/css/configuracion-menus.css">
 </head>
 
 <body>
@@ -81,58 +82,38 @@
     </nav>
 
     <main>
-        <h2>Configuracion</h2>
+        <h1>Gestion de menus</h1>
 
-        <p>Aqui podras configurar varios aspectos de tu aplicacion</p>
+        <div class="gestion">
+            <div id="categorias">
+                <button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M11 13H5v-2h6V5h2v6h6v2h-6v6h-2z" />
+                    </svg> Nueva categoria</button>
 
-        <div class="horizontal-divider"></div>
+                <div class="horizontal-divider"></div>
 
-        <!-- Contraseña de acceso -->
-        <section>
-            <h2>Contraseña de acceso</h2>
-
-            <p>Actualiza la contraseña de acceso a la aplicacion</p>
-
-            <div id="contrasena">
-                Tu contraseña: <input type="password" placeholder="Contraseña" value="12345678">
-                <button>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5" />
-                    </svg>
-                    Ver Contraseña
-                </button>
-
-                <button>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5.5L18.5 3H17v6a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V3zm7 1v5h3V4zm-5 8h10a1 1 0 0 1 1 1v6H6v-6a1 1 0 0 1 1-1" />
-                    </svg>
-                    Guardar
-                </button>
+                <p>Platos fuertes</p>
+                <p>Bebidas</p>
             </div>
-        </section>
+            <div class="vertical-divider"></div>
+            <div id="contenido-categoria">
+                <div class="hamburguesa">
+                    <img src="https://lagastrohouse.com/wp-content/uploads/2023/06/DOBLE-50.jpg"
+                        alt="Hamburguesa Doble">
+                    <div class="informacion">
+                        <p><strong>Hamburguesa Doble carne</strong></p>
+                        <p>Dos carnes de 150g y queso mozzarella</p>
+                        <p>$ 17.000</p>
+                    </div>
+                    <div class="sumar_restar">
+                        <button>-</button>
+                        <span>0</span>
+                        <button>+</button>
+                    </div>
+                </div>
 
-        <div class="horizontal-divider"></div>
-
-        <!-- Gestion de menus -->
-        <section>
-            <h2>Menus</h2>
-            <p>Gestiona tus menus desde su apartado de configuracion</p>
-            <div>
-                <a href="/escritorio/configuracion/menu/">
-                    <button>
-                        Gestionar menus
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                            <path fill="currentColor" d="M8.025 22L6.25 20.225L14.475 12L6.25 3.775L8.025 2l10 10z" />
-                        </svg>
-                    </button>
-                </a>
             </div>
-        </section>
-
-        <div class="horizontal-divider"></div>
-
+        </div>
     </main>
 
 </body>

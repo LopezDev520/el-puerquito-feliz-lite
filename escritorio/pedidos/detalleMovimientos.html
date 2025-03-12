@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <link rel="stylesheet" href="/escritorio/css/layout.css">
+    <link rel="stylesheet" href="/escritorio/css/detalleMovimientos.css">
+</head>
+
+<body>
+    <nav>
+        <div>
+            <a href="/escritorio/panel/">
+                <div class="icon-label">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M17 9H3M17 9C18.1046 9 19 9.89543 19 11V17C19 18.1046 18.1046 19 17 19H3C1.89543 19 1 18.1046 1 17V11C1 9.89543 1.89543 9 3 9M17 9V7C17 5.89543 16.1046 5 15 5M3 9V7C3 5.89543 3.89543 5 5 5M5 5V3C5 1.89543 5.89543 1 7 1H13C14.1046 1 15 1.89543 15 3V5M5 5H15"
+                            stroke="#545F71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                    <p>Panel</p>
+                </div>
+                <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 1.16659L7.33333 6.99992L1.5 12.8333" stroke="#9BA5B7" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
+
+            <a href="/escritorio/pedidos" class="active">
+                <div class="icon-label">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M1 3C1 1.89543 1.89543 1 3 1H5C6.10457 1 7 1.89543 7 3V5C7 6.10457 6.10457 7 5 7H3C1.89543 7 1 6.10457 1 5V3Z"
+                            stroke="#545F71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M11 3C11 1.89543 11.8954 1 13 1H15C16.1046 1 17 1.89543 17 3V5C17 6.10457 16.1046 7 15 7H13C11.8954 7 11 6.10457 11 5V3Z"
+                            stroke="#545F71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M1 13C1 11.8954 1.89543 11 3 11H5C6.10457 11 7 11.8954 7 13V15C7 16.1046 6.10457 17 5 17H3C1.89543 17 1 16.1046 1 15V13Z"
+                            stroke="#545F71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M11 13C11 11.8954 11.8954 11 13 11H15C16.1046 11 17 11.8954 17 13V15C17 16.1046 16.1046 17 15 17H13C11.8954 17 11 16.1046 11 15V13Z"
+                            stroke="#545F71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                    Pedidos
+                </div>
+                <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 1.16659L7.33333 6.99992L1.5 12.8333" stroke="#9BA5B7" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+            </a>
+        </div>
+
+        <div>
+            <a href="/escritorio/configuracion">
+                <div class="icon-label">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.32463 2.31731C8.75103 0.560897 11.249 0.560897 11.6754 2.31731C11.9508 3.45193 13.2507 3.99038 14.2478 3.38285C15.7913 2.44239 17.5576 4.2087 16.6172 5.75218C16.0096 6.74925 16.5481 8.04918 17.6827 8.32463C19.4391 8.75103 19.4391 11.249 17.6827 11.6754C16.5481 11.9508 16.0096 13.2507 16.6172 14.2478C17.5576 15.7913 15.7913 17.5576 14.2478 16.6172C13.2507 16.0096 11.9508 16.5481 11.6754 17.6827C11.249 19.4391 8.75103 19.4391 8.32463 17.6827C8.04918 16.5481 6.74926 16.0096 5.75219 16.6172C4.2087 17.5576 2.44239 15.7913 3.38285 14.2478C3.99038 13.2507 3.45193 11.9508 2.31731 11.6754C0.560897 11.249 0.560897 8.75103 2.31731 8.32463C3.45193 8.04918 3.99037 6.74926 3.38285 5.75218C2.44239 4.2087 4.2087 2.44239 5.75219 3.38285C6.74926 3.99037 8.04918 3.45193 8.32463 2.31731Z"
+                            stroke="#545F71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M13 10C13 11.6569 11.6569 13 10 13C8.34315 13 7 11.6569 7 10C7 8.34315 8.34315 7 10 7C11.6569 7 13 8.34315 13 10Z"
+                            stroke="#545F71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                    Configuracion
+                </div>
+                <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 1.16659L7.33333 6.99992L1.5 12.8333" stroke="#9BA5B7" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+            </a>
+        </div>
+    </nav>
+
+    <main class="movement-details">
+        <h1 class="movement-title">Detalles del movimiento</h1>
+        <div class="contenedor-verificacion">
+            <div class="chek-exito">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
+                    <g fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4H5zm14.707 6.707a1 1 0 0 0-1.414-1.414L9 15.586l-3.293-3.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l10-10z"
+                            fill="#65a30d" />
+                    </g>
+                    <span>
+                        ¡Pago exitoso!
+                    </span>
+                </svg>
+
+            </div>
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 512 512">
+                    <path fill="#333333"
+                        d="m39.93 149.25l197.4 95.32c5.14 2.45 12 3.73 18.79 3.73s13.65-1.28 18.78-3.73l197.4-95.32c10.38-5 10.38-13.18 0-18.2L274.9 35.73c-5.13-2.45-12-3.73-18.78-3.73s-13.65 1.28-18.79 3.73l-197.4 95.32c-10.38 5.02-10.38 13.18 0 18.2" />
+                    <path fill="#333333"
+                        d="M472.3 246.9s-36.05-17.38-40.83-19.72s-6.07-2.21-11.09.12s-145.6 70.23-145.6 70.23a45.7 45.7 0 0 1-18.78 3.74c-6.77 0-13.65-1.29-18.78-3.74c0 0-136.85-66-143.27-69.18C87 225 85 225 78.67 228l-39 18.78c-10.38 5-10.38 13.19 0 18.2L237.1 360.3c5.13 2.45 12 3.73 18.78 3.73s13.65-1.28 18.79-3.73l197.4-95.3c10.61-4.92 10.61-13.08.23-18.1" />
+                    <path fill="#333333"
+                        d="M472.3 362.75s-36.05-17.38-40.83-19.75s-6.07-2.21-11.09.12S274.9 413.5 274.9 413.5a45.7 45.7 0 0 1-18.78 3.73c-6.77 0-13.65-1.28-18.79-3.73c0 0-136.85-66-143.26-69.18c-7-3.39-9-3.39-15.29-.35l-39 18.78c-10.39 5-10.39 13.18 0 18.2l197.4 95.32c5.13 2.56 12 3.73 18.78 3.73s13.65-1.28 18.78-3.73L472.18 381c10.5-5.07 10.5-13.23.12-18.25" />
+                </svg>
+            </div>
+
+        </div>
+        <div class="detail">
+            <label>Cliente</label>
+            <span>Elver</span>
+        </div>
+        <div class="detail">
+            <label>Mesa</label>
+            <span>4</span>
+        </div>
+        <div class="detail">
+            <label>Valor del Pedido</label>
+            <span>$ 53.200</span>
+        </div>
+        <div class="detail">
+            <label>Fecha</label>
+            <span>12/03/2025</span>
+        </div>
+        <div class="detail">
+            <label>Referencia</label>
+            <span>M25877</span>
+        </div>
+        <button class="status">
+            Listo
+    </button>
+    </main>
+
+</body>
+
+</html>

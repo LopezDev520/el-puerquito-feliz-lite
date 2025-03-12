@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Comida</title>        
+    <link rel="stylesheet" href="/movil/css/menu.css">
+</head>
+<body>
+    <div class="contenedor_menu">
+        <h2>Platos fuertes</h2>
+        <div class="seccion_plato">
+            <div class="hamburguesa">
+                <img src="https://lagastrohouse.com/wp-content/uploads/2023/06/DOBLE-50.jpg" alt="Hamburguesa Doble">
+                <div class="informacion">
+                    <p><strong>Hamburguesa Doble carne</strong></p>
+                    <p>Dos carnes de 150g y queso mozzarella</p>
+                    <p>$ 17.000</p>
+                </div>
+                <div class="sumar_restar">
+                    <button>-</button>
+                    <span>0</span>
+                    <button>+</button>
+                </div>
+            </div>
+            <input class="anotacion" type="text" placeholder="Anotaciones...">
+        </div>
+
+        <div class="seccion_plato">
+            <div class="hamburguesa">
+                <img src="https://lacostilladejuan.com/wp-content/uploads/2020/06/hamburguesa_sencilla_2.jpg" alt="Hamburguesa Sencilla">
+                <div class="informacion">
+                    <p><strong>Hamburguesa Sencilla</strong></p>
+                    <p>Carne de 120g y vegetales</p>
+                    <p>$ 12.000</p>
+                </div>
+                <div class="sumar_restar">
+                    <button>-</button>
+                    <span>0</span>
+                    <button>+</button>
+                </div>
+            </div>
+            <input class="anotacion" type="text" placeholder="Anotaciones...">
+        </div>
+
+        <div class="seccion_plato">
+            <div class="hamburguesa">
+                <img src="https://cdn.inoutdelivery.com/hotamericas.inoutdelivery.com.co/lg/1641504389249-burger_pollo-grille.webp" alt="Hamburguesa Pollo">
+                <div class="informacion">
+                    <p><strong>Hamburguesa Pollo</strong></p>
+                    <p>Pollo de 120g y vegetales</p>
+                    <p>$ 14.000</p>
+                </div>
+                <div class="sumar_restar">
+                    <button>-</button>
+                    <span>0</span>
+                    <button>+</button>
+                </div>
+            </div>
+            <input class="anotacion" type="text" placeholder="Anotaciones...">
+        </div>
+
+        <h2>Bebidas</h2>
+        <div class="seccion_bebida">
+            <div class="bebida">
+                <img src="https://carulla.vtexassets.com/arquivos/ids/19880571/Coca-Cola-Vidrio-300-ml-310750_b.jpg?v=638768885641270000" alt="Gaseosa de Cola">
+                <div class="informacion">
+                    <p><strong>Gaseosa de Cola</strong></p>
+                    <p>Refresco de 350ml</p>
+                    <p>$3.500</p>
+                </div>
+                <div class="sumar_restar">
+                    <button>-</button>
+                    <span>0</span>
+                    <button>+</button>
+                </div>
+            </div>
+        </div>
+        <div class="seccion_bebida">
+            <div class="bebida">
+                <img src="https://carulla.vteximg.com.br/arquivos/ids/18664686/Gaseosa-Manzana-Cero-X-15-Litros-17521_a.jpg" alt="Gaseosa de Manzana">
+                <div class="informacion">
+                    <p><strong>Gaseosa de Manzana</strong></p>
+                    <p>Refresco de 350ml</p>
+                    <p>$3.500</p>
+                </div>
+                <div class="sumar_restar">
+                    <button>-</button>
+                    <span>0</span>
+                    <button>+</button>
+                </div>
+            </div>
+        </div>
+        <div class="seccion_bebida">
+            <div class="bebida" data-price="3500">
+                <img src="https://carulla.vteximg.com.br/arquivos/ids/19881416/GASEOSA-269911_a.jpg" alt="Gaseosa de Limon">
+                <div class="informacion">
+                    <p><strong>Gaseosa de Limon</strong></p>
+                    <p>Refresco de 350ml</p>
+                    <p>$3.500</p>
+                </div>
+                <div class="sumar_restar">
+                    <button class="decrease">-</button>
+                    <span class="quantity">0</span>
+                    <button class="increase">+</button>
+                </div>
+            </div>
+        </div>
+
+        <p class="total">Total a pagar: $56.500</p>
+        <button class="btn-submit">Enviar pedido</button>
+    </div>
+    <script src="/movil/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    min-height: 100dvh;
+    background-color: #f4f4f4;
+}
+
+.search-bar {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #8f1f1f;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-bar input:focus {
+    border-color: #0a70ff;
+}
+
+/* Contenido principal */
+main {
+    padding: 2.5rem;
+    display: flex;
+    
+}
+
+/* Estilos para los pedidos pendientes */
+.pedidos-pendientes {
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pedidos-pendientes h3 {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.pedido {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+    color: #000000;
+    background-color: #59d440;
+}
+
+.pedido:last-child {
+    border-bottom: none;
+}
+
+.title{
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+.search-input{
+    padding: 0.75rem;
+    border: 1px solid #8f1f1f;
+    border-radius: 20px;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+}

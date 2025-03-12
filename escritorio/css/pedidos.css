@@ -13,15 +13,6 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Barra de navegación */
-.navbar {
-    background-color: #fff;
-    padding: 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-}
-
 .search-bar {
     display: flex;
     gap: 0.5rem;
@@ -45,14 +36,20 @@ body {
 /* Contenido principal */
 main {
     padding: 2.5rem;
+    display: flex;
+    
 }
 
 /* Estilos para los pedidos pendientes */
 .pedidos-pendientes {
-    background-color: #fff;
+    width: 100%;
+    background-color: #f9f9f9;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .pedidos-pendientes h3 {

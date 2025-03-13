@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/movil/css/login.css">
+</head>
+<body>
+    <form onsubmit="event.preventDefault(); obtenerToken(event);" class="container">
+        <label for="name">
+            Nombre
+            <input name="nombre" type="text" id="name" placeholder="Escribe tu nombre">
+        </label>
+        <label>
+            Numero de mesa:
+            <select name="num_mesa" id="numero-mesa"></select>
+        </label>
+
+        <button type="submit">Ingresar al menú</button>
+    </form>
+
+    <script src="/movil/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+.movement-details {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 2px;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px auto; /* Centrado con margen */
+}
+
+.movement-title {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px; /* Reducido el margen inferior */
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; /* Reducido el margen inferior */
+}
+
+.detail label {
+    font-weight: bold;
+    color: #555;
+}
+
+.detail span {
+    color: #333;
+}
+
+.status {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin-top: 15px; /* Reducido el margen superior */
+    background-color: #65a30d;
+}
+
+.contenedor-verificacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.chek-exito {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chek-exito svg {
+    width: 25px;
+    height: 25px;
+}
+
+.chek-exito span {
+    font-size: 16px;
+    color: #65a30d;
+    font-weight: bold;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo svg {
+    width: 128px;
+    height: 128px;
+}

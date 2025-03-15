@@ -1,0 +1,121 @@
+/* Estilos para el panel de estadísticas */
+.stats-summary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 1rem; 
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    margin-right: 6rem;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 1rem; /* Padding reducido */
+    border-radius: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 500px; /* Ancho fijo de 500px */
+}
+
+/* Estilos para el ícono con fondo redondeado */
+.stat-icon {
+    background-color: #E0FFD5;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Evita que el ícono se reduzca */
+}
+
+/* Estilos para el contenido (h2 y p) */
+.stat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; 
+}
+
+.stat-content h2 {
+    font-size: 1.7rem;
+    color: #545F71;
+    margin-top: 20px; 
+}
+
+.stat-content p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-left: 5.5rem; 
+    margin-top: 5px;
+}
+
+/* Estilos para la linea divisora */
+.divider{
+    border: 1px solid #000000;
+    margin-top: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+
+}
+/* Estilos para el producto más vendido */
+.best-seller {
+    background-color: white;
+    padding: 8px;
+    border: solid 1px #020202;
+    border-radius:24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    width: 400px;
+    margin-right: 4rem;
+    margin-left: 4rem;
+}
+
+.tittle-best-seller {
+    font-size: 1.5rem;
+    color: #545F71;
+    margin-bottom: 1rem;
+}
+
+.product-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+}
+
+.product-card img {
+    width: 124px; 
+    height: 124px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    border-radius: 14px;
+    object-fit: cover; 
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; 
+}
+
+.product-info h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+}
+
+.product-info p {
+    font-size: 1rem;
+    color: #545F71;
+    margin: 0; 
+}
+
+.product-info p strong {
+    font-size: 1.2rem; 
+    color: #333;
+}
+

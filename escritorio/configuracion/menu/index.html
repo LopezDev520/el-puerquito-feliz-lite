@@ -86,80 +86,45 @@
 
         <div class="gestion">
             <section id="categorias">
-                <button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <button onclick="cambiarHidden('#nueva-categoria-modal')"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M11 13H5v-2h6V5h2v6h6v2h-6v6h-2z" />
                     </svg> Nueva categoria</button>
 
                 <div class="horizontal-divider"></div>
-
-                <p>Platos fuertes</p>
-                <p>Bebidas</p>
             </section>
 
             <div class="vertical-divider"></div>
             
             <section id="contenido-categoria">
-                <h2>Platos fuertes</h2>
+                <div class="cabecera-contenido">
+                    <h2 id="nombre-categoria">Platos fuertes</h2>
 
-                <section class="elementos">
-                    <div class="elemento">
-                        <img src="https://lagastrohouse.com/wp-content/uploads/2023/06/DOBLE-50.jpg"
-                            alt="Hamburguesa Doble">
-                        <div class="informacion">
-                            <p><strong>Hamburguesa Doble carne</strong></p>
-                            <p>Dos carnes de 150g y queso mozzarella</p>
-                            <p>$ 17.000</p>
+                    <a id="nuevo-item-btn">
+                        <button>Nuevo Item</button>
+                    </a>
+                </div>
 
-                            <div class="acciones">
-                                <button>Editar</button>
-                                <button>Eliminar</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <section class="elementos"></section>
             </section>
         </div>
 
-        <!-- <div class="gestion">
-            <div id="categorias">
-                <button><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M11 13H5v-2h6V5h2v6h6v2h-6v6h-2z" />
-                    </svg> Nueva categoria</button>
-
-                <div class="horizontal-divider"></div>
-
-                <p>Platos fuertes</p>
-                <p>Bebidas</p>
-            </div>
-            <div class="vertical-divider"></div>
-            <div id="contenido-categoria">
-                <h2>Platos fuertes</h2>
-                <div class="elemento">
-                    <div>
-                        <img src="https://lagastrohouse.com/wp-content/uploads/2023/06/DOBLE-50.jpg" alt="Hamburguesa Doble">
-                        <div class="informacion">
-                            <p><strong>Hamburguesa Doble carne</strong></p>
-                            <p>Dos carnes de 150g y queso mozzarella</p>
-                            <p>$ 17.000</p>
-                        </div>
-                    </div>
+        <!-- Modal de nueva categoria -->
+        <div id="nueva-categoria-modal" class="modal hidden">
+            <form onsubmit="event.preventDefault();crearCategoria(event)">
+                <div class="modal-content">
+                    <h2>Crear nueva categoria</h2>
+                    <p>Nombre:</p>
+                    <input type="text" name="nombre" placeholder="Bebidas, Postres...">
+                    <button type="submit">Guardar</button>
+                    <button onclick="cambiarHidden('#nueva-categoria-modal')">Cancelar</button>
                 </div>
-
-                <div class="elemento">
-                    <div>
-                        <img src="https://lagastrohouse.com/wp-content/uploads/2023/06/DOBLE-50.jpg" alt="Hamburguesa Doble">
-                        <div class="informacion">
-                            <p><strong>Hamburguesa Doble carne</strong></p>
-                            <p>Dos carnes de 150g y queso mozzarella</p>
-                            <p>$ 17.000</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div> -->
+            </form>
+        </div>
     </main>
 
+    
+
+    <script src="/escritorio/js/menu-configuracion.js"></script>
 </body>
 
 </html>

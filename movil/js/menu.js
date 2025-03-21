@@ -8,7 +8,12 @@ function addCantidad(id, event) {
     const pedidoPlatoEl = event.target.parentElement.parentElement.parentElement
 
     if (!platoExiste) {
-        const anotacion = pedidoPlatoEl.querySelector(".anotacion").value
+        let anotacion
+        try {
+            anotacion = pedidoPlatoEl.querySelector(".anotacion").value
+        } catch(e) {
+            anotacion = ""
+        }
 
         const pedidoPlato = {
             plato_id: id,

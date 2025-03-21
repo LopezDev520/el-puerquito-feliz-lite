@@ -58,7 +58,7 @@ const guardarNumeroMesas = async () => {
 
     const res = await fetch("/api/admin/cambiar-numero-mesas", {
         method: "POST",
-        headers: { 'Authorization': token },
+        headers: { 'Authorization': token, 'Content-Type': "application/json" },
         body: JSON.stringify({ numero_mesas })
     })
 

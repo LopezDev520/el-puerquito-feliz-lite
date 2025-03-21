@@ -83,31 +83,37 @@
     <main>
         <div class="contenedor_formulario">
             <h2><strong>Nuevo plato</strong></h2>
-            <div class="contenido">
-                <div class="imagen">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Camera_icon.svg" alt="">
+            <form onsubmit="event.preventDefault(); guardarItem(event)">
+                <input type="hidden" name="categoria_id" value="" />
+                <div class="contenido">
+                    <div class="imagen">
+                        <img id="imagen" src="" alt="">
+                        <label id="adjuntar-imagen">
+                            Adjuntar Imagen
+                            <input type="file" id="imagen-input" name="imagen" accept="image/*" oninput="mostrarImagen(event)" >
+                        </label>
+                    </div>
+                    <div class="contenedor_campos">
+                        <div class="campos">
+                            <label for="nombre">Nombre del Producto</label>
+                            <input type="text" id="nombre" name="nombre">
+                        </div>
+                        <div class="campos">
+                            <label for="descripcion">Descripción del Producto</label>
+                            <input type="text" id="descripcion" name="descripcion">
+                        </div>
+                        <div class="campos">
+                            <label for="precio">Precio</label>
+                            <input type="text" id="precio" name="precio">
+                        </div>
+                    </div>
                 </div>
-                <div class="contenedor_campos">
-                    <div class="campos">
-                        <label for="nombre">Nombre del Producto</label>
-                        <input type="text" id="nombre">
-                    </div>
-                    <div class="campos">
-                        <label for="descripcion">Descripción del Producto</label>
-                        <input type="text" id="descripcion">
-                    </div>
-                    <div class="campos">
-                        <label for="precio">Precio</label>
-                        <input type="text" id="precio">
-                    </div>
-                    
-                </div>
-            </div>
-            <button class="boton">Guardar</button>
+                <button class="boton">Guardar</button>
+            </form>
         </div>
     </main>
-    
 
+    <script src="/escritorio/js/nuevo-item.js"></script>
 </body>
 
 </html>

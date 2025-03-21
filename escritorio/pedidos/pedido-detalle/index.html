@@ -81,82 +81,20 @@
     </nav>
 
     <main>
-        <h2>Pedido de: JJ</h2>
+        <h2>Pedido de: <span id="persona-pedido"></span></h2>
         
         <section class="detalle">
             <section class="elementos">
-                <div class="elemento">
-                    <img src="https://lagastrohouse.com/wp-content/uploads/2023/06/DOBLE-50.jpg"
-                        alt="Hamburguesa Doble">
-                    <div class="informacion">
-                        <p><strong>Hamburguesa Doble carne</strong></p>
-                        <p>Dos carnes de 150g y queso mozzarella</p>
-                        <p>$ 17.000</p>
-                        <p>x2</p>
-
-                       
-                    </div>
-                </div>
-
-                <div class="elemento">
-                    <img src="https://lagastrohouse.com/wp-content/uploads/2023/06/DOBLE-50.jpg"
-                        alt="Hamburguesa Doble">
-                    <div class="informacion">
-                        <p><strong>Hamburguesa Doble carne</strong></p>
-                        <p>Dos carnes de 150g y queso mozzarella</p>
-                        <p>$ 17.000</p>
-                        <p>x2</p>
-                    </div>
-                </div>
-                <div class="elemento">
-                    <img src="https://lagastrohouse.com/wp-content/uploads/2023/06/DOBLE-50.jpg"
-                        alt="Hamburguesa Doble">
-                    <div class="informacion">
-                        <p><strong>Hamburguesa Doble carne</strong></p>
-                        <p>Dos carnes de 150g y queso mozzarella</p>
-                        <p>$ 17.000</p>
-                        <p>x2</p>
-                    </div>
-                </div>
-                <div class="elemento">
-                    <img src="https://lagastrohouse.com/wp-content/uploads/2023/06/DOBLE-50.jpg"
-                        alt="Hamburguesa Doble">
-                    <div class="informacion">
-                        <p><strong>Hamburguesa Doble carne</strong></p>
-                        <p>Dos carnes de 150g y queso mozzarella</p>
-                        <p>$ 17.000</p>
-                        <p>x2</p>
-                    </div>
-                </div>
-                <div class="elemento">
-                    <img src="https://lagastrohouse.com/wp-content/uploads/2023/06/DOBLE-50.jpg"
-                        alt="Hamburguesa Doble">
-                    <div class="informacion">
-                        <p><strong>Hamburguesa Doble carne</strong></p>
-                        <p>Dos carnes de 150g y queso mozzarella</p>
-                        <p>$ 17.000</p>
-                        <p>x2</p>
-                    </div>
-                </div>
-                <div class="elemento">
-                    <img src="https://lagastrohouse.com/wp-content/uploads/2023/06/DOBLE-50.jpg"
-                        alt="Hamburguesa Doble">
-                    <div class="informacion">
-                        <p><strong>Hamburguesa Doble carne</strong></p>
-                        <p>Dos carnes de 150g y queso mozzarella</p>
-                        <p>$ 17.000</p>
-                        <p>x2</p>
-                    </div>
-                </div>
+            
             </section>
             <div class="vertical-divider"></div>
             <section class="pago">
-                <form>
+                <form onsubmit="event.preventDefault(); enviarPago(event)">
                     <label>
                         <p>Paga con:</p>
                         <div class="input-pago">
                             <span>$</span>
-                            <input type="text" placeholder="000000">
+                            <input oninput="manejarEntradaPrecio(event)" type="text" name="dinero_recibido" placeholder="000000">
                         </div>
                         <div class="pago-boton-container">
                             <button>PAGAR</button>
@@ -165,14 +103,14 @@
                 </form>
 
                 <div class="valores">
-                    <p>TOTAL: $ <span id="total-pago">56500</span></p>
+                    <p>TOTAL: $ <span id="total-pago"></span></p>
                     <p>CAMBIO: $ <span id="cambio-pago">0</span></p>
                 </div>
-                
             </section>
         </section>
     </main>
 
+    <script src="/escritorio/js/pedido-detalle.js"></script>
 
 </body>
 

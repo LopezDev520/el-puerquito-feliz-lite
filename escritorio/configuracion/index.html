@@ -94,15 +94,15 @@
             <p>Actualiza la contraseña de acceso a la aplicacion</p>
 
             <div id="contrasena" class="campo">
-                Tu contraseña: <input type="password" placeholder="Contraseña" value="12345678">
-                <button>
+                Tu contraseña: <input type="password" name="contrasena" placeholder="Contraseña" value="">
+                <button onclick="mostrarContrasena()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5" />
                     </svg>
                 </button>
 
-                <button>
+                <button onclick="guardarContrasena()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5.5L18.5 3H17v6a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V3zm7 1v5h3V4zm-5 8h10a1 1 0 0 1 1 1v6H6v-6a1 1 0 0 1 1-1" />
@@ -119,8 +119,8 @@
             <p>Establezca el numero de mesas en el restaurante</p>
 
             <div id="num-mesas" class="campo">
-                Numero de mesas: <input type="text">
-                <button>
+                Numero de mesas: <input type="text" name="numero_mesas">
+                <button onclick="guardarNumeroMesas()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5.5L18.5 3H17v6a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V3zm7 1v5h3V4zm-5 8h10a1 1 0 0 1 1 1v6H6v-6a1 1 0 0 1 1-1" />
@@ -149,6 +149,8 @@
         </section>
 
     </main>
+
+    <script src="/escritorio/js/configuracion.js"></script>
 
 </body>
 

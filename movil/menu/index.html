@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Pedido de Comida</title>        
+    <title>Menu - Pedido de Comida</title>
     <link rel="stylesheet" href="/movil/css/menu.css">
 </head>
+
 <body>
     <div class="contenedor_menu">
-        <h2>Platos fuertes</h2>
+        <!-- <h2>Platos fuertes</h2>
         <div class="seccion_plato">
             <div class="hamburguesa">
                 <img src="https://lagastrohouse.com/wp-content/uploads/2023/06/DOBLE-50.jpg" alt="Hamburguesa Doble">
@@ -105,11 +107,13 @@
                     <button class="increase">+</button>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <p class="total">Total a pagar: $56.500</p>
-        <button class="btn-submit">Enviar pedido</button>
     </div>
+
+    <p class="total">Total a pagar: $<span id="total">0</span></p>
+    <button onclick="enviarPedido()" class="btn-submit">Enviar pedido</button>
     <script src="/movil/js/menu.js"></script>
 </body>
+
 </html>

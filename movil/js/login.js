@@ -3,13 +3,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     const numeroMesas = await getNumeroMesas();
     const $numeroMesa = document.getElementById('numero-mesa');
 
+    window.localStorage.clear()
+
     for (let i = 1; i <= numeroMesas; i++) {
         $numeroMesa.innerHTML += `<option value="${i}">Mesa ${i}</option`
     }
 })
 
 const getNumeroMesas = async () => {
-    const response = await fetch('/api/numero-mesas');
+    const response = await fetch('/api/cliente/obtener-numero-mesas');
     const data = await response.json();
     return data;
 }
@@ -23,14 +25,14 @@ const obtenerToken = async (event) => {
         return;
     }
 
-    const token = await fetch('/api/nuevo-cliente', {
+    const res = await fetch('/api/cliente/generar-token', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(Object.fromEntries(formData)),
-    }).then(response => response.text());
+    }).then(response => response.json());
 
-    localStorage.setItem('token', token);
+    localStorage.setItem('token', res.token);
     window.location.href = '/movil/menu';
 }

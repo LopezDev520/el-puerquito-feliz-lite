@@ -7,8 +7,15 @@ body {
     margin: 0;
     padding: 0;
     height: 100dvh;
-    background-color: #f0f0f0;
 }
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+}
+
 .contenedor_menu {
     /* height: 100dvh; */
     /* overflow-y: scroll; */

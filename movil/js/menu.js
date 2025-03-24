@@ -47,6 +47,7 @@ function removeCantidad(id, event) {
     if (pedido[platoIndex].cantidad <= 0) {
         pedido = pedido.filter(plato => plato.plato_id != id)
         pedidoPlatoEl.querySelector(".cantidad").textContent = 0
+
     }
 
     console.log(pedido)

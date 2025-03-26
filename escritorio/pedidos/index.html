@@ -82,11 +82,14 @@
     <main>
         <h2 class="title">Pedidos Pendientes</h2>
         <div class="search-container">
-            <input type="text" placeholder="Buscar pedido por nombre..." class="search-input">
+            <input type="text" oninput="filtrarPorNombre(this.value);" placeholder="Buscar pedido por nombre..." class="search-input">
+            <select onchange="filtrarPorMesa(this.value);" name="num_mesa">
+                <option value="0">Todas las mesas</option>
+            </select>
         </div>
         <div>
+            <h3>Pedidos</h3>
             <div class="pedidos-pendientes">
-                <h3>Pedidos</h3>
             </div>
         </div>
     </main>

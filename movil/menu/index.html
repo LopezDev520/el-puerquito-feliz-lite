@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu - Pedido de Comida</title>
     <link rel="stylesheet" href="/movil/css/menu.css">
+    <script src="/socket.io/socket.io.js"></script>
 </head>
 
 <body>
@@ -18,7 +19,11 @@
 
     <p class="total">Total a pagar: $<span id="total">0</span></p>
     <button onclick="enviarPedido()" class="btn-submit">Enviar pedido</button>
+
+ 
+    <script src="/movil/js/socketio.js"></script>
     <script src="/movil/js/menu.js"></script>
+
 </body>
 
 </html>

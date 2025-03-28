@@ -126,4 +126,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         contenedorMenu.innerHTML += `${html}${platos}`
     })
+
+    // Inhabilitar Mi pedido en caso de que no se haya hecho pedido todavia
+    const pedido_id = window.localStorage.getItem("pedido_id")
+    if (!pedido_id) {
+        const $link = document.getElementById("link-mi-pedido")
+        $link.onclick = () => alert("No haz hecho ningun pedido")
+        $link.href = "#"
+    }
 });

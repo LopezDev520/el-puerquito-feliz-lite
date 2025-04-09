@@ -1,0 +1,30 @@
+table {
+    thead tr {
+        background-color: cadetblue;
+
+        td:first-child {
+            border-radius: 1rem 0 0 0;
+        }
+
+        td:last-child {
+            border-radius: 0 1rem 0 0;
+        }
+    }
+
+    tbody tr:last-child {
+        td:first-child {
+            border-radius: 0 0 0 1rem;
+        }
+
+        td:last-child {
+            border-radius: 0 0 1rem 0;
+        }
+    }
+
+    td {
+        text-align: center;
+        padding: .5rem;
+        /* border-radius: 1rem; */
+        border: 1px solid black;
+    }
+}

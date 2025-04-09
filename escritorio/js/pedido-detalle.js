@@ -1,6 +1,8 @@
 
 let pedido
 let total
+let $estadoSelector
+let $seccionPago
 let $personaPedido
 let $elementos
 let $totalPago
@@ -10,6 +12,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     pedido = await obtenerPedido()
     total = calcularTotal()
     console.log(pedido)
+
+    if (!pedido.activado) {
+        $seccionPago = document.querySelector(".pago")
+        $seccionPago.style["display"] = "none"
+    }
+
+    $estadoSelector = document.getElementById("estado")
+    $estadoSelector.value = pedido.estado
 
     $personaPedido = document.getElementById("persona-pedido")
     $personaPedido.textContent = pedido.cliente.nombre
@@ -26,6 +36,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         const html = crearPlatoHtml(plato, cantidad, anotacion)
         $elementos.innerHTML += html
     }
+
+
 })
 
 const calcularTotal = () => pedido.pedidoPlatos.reduce((acum, pedidoPlato) => acum + pedidoPlato.subtotal, 0)
@@ -76,6 +88,19 @@ const enviarPago = async event => {
     })
 
     if (res.ok) {
-        window.location.href = "/escritorio/pedidos"
+        const pago = await res.json()
+        window.location.href = `/escritorio/pedidos/detalle-movimiento?pago_id=${pago.id}`
     }
+}
+
+const cambiarEstadoPedido = async event => {
+
+    const estado = event.target.value
+
+    await fetch(`/api/caja/cambio-estado-pedido?pedido_id=${pedido.id}`, {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ estado })
+    })
+
 }

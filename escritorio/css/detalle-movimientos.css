@@ -35,6 +35,8 @@
     font-weight: bold;
     color: rgb(255, 255, 255);
     margin-top: 15px; /* Reducido el margen superior */
+    padding: 1rem;
+    border-radius: 1rem;
     background-color: #65a30d;
 }
 

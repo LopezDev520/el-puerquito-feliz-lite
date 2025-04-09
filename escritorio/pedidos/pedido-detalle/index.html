@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedidos - Detalle</title>
     <link rel="stylesheet" href="/escritorio/css/layout.css">
-    <!-- <link rel="stylesheet" href="/escritorio/css/pedidos.css"> -->
     <link rel="stylesheet" href="/escritorio/css/pedidos-detalle.css">
 </head>
 
@@ -81,7 +80,18 @@
     </nav>
 
     <main>
-        <h2>Pedido de: <span id="persona-pedido"></span></h2>
+        <header>
+            <h2>Pedido de: <span id="persona-pedido"></span></h2>
+
+            <div>
+                <p>Estado: </p>
+                <select id="estado" onchange="cambiarEstadoPedido(event)">
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En preparación">En preparación</option>
+                    <option value="Entregado">Entregado</option>
+                </select>
+            </div>
+        </header>
         
         <section class="detalle">
             <section class="elementos">

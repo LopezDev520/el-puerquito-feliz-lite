@@ -5,23 +5,15 @@ let pedido
 let $listaItems
 let $estadoPedido
 
+socket.on("estado-cambiado", estado => mostrarEstadoPedido(estado))
+
 document.addEventListener("DOMContentLoaded", async () => {
 
     pedido = await obtenerPedido()
     $listaItems = document.getElementById("lista-items")
     $estadoPedido = document.getElementById("estado")
 
-    /* Mostrar el estado del pedido (Pendiente, En Preparacion o Entregado) */
-    if (pedido.estado === "Pendiente") {
-        $estadoPedido.classList.add("pendiente")
-        $estadoPedido.textContent = "Pendiente"
-    } else if (pedido.estado == "En preparación") {
-        $estadoPedido.classList.add("en-preparacion")
-        $estadoPedido.textContent = "En Preparación"
-    } else if (pedido.estado == "Entregado") {
-        $estadoPedido.classList.add("entregado")
-        $estadoPedido.textContent = "Entregado"
-    }
+    mostrarEstadoPedido(pedido.estado)
 
     /* Renderizar los items (platos o bebidas) en el pedido  */
     pedido.pedidoPlatos.forEach(({ plato, cantidad, anotacion }) => {
@@ -46,6 +38,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     })
     
 })
+
+const mostrarEstadoPedido = estado => {
+    /* Mostrar el estado del pedido (Pendiente, En Preparacion o Entregado) */
+    $estadoPedido.className = "estado"
+    if (estado === "Pendiente") {
+        $estadoPedido.classList.add("pendiente")
+        $estadoPedido.textContent = "Pendiente"
+    } else if (estado == "En preparación") {
+        $estadoPedido.classList.add("en-preparacion")
+        $estadoPedido.textContent = "En Preparación"
+    } else if (estado == "Entregado") {
+        $estadoPedido.classList.add("entregado")
+        $estadoPedido.textContent = "Entregado"
+    }
+}
 
 const obtenerPedido = async () => {
     const pedidoId = localStorage.getItem("pedido_id")

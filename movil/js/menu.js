@@ -1,60 +1,106 @@
 let pedido = []
-let menu = []
+let menu
 
-function addCantidad(id, event) {
-    const platoIndex = pedido.findIndex(plato => plato.plato_id == id)
-    const platoExiste = platoIndex != -1
+document.addEventListener("DOMContentLoaded", async function () {
+    const $menu = document.querySelector(".contenedor_menu")
+    menu = await obtenerMenu()
 
-    const pedidoPlatoEl = event.target.parentElement.parentElement.parentElement
+    menu.forEach(categoria => {
+        const html = `<h2>${categoria.nombre}</h2>`
+        const platos = categoria.platos.map(plato => renderizarPlato(plato, categoria.nombre === "Bebidas"))
 
-    if (!platoExiste) {
-        let anotacion
-        try {
-            anotacion = pedidoPlatoEl.querySelector(".anotacion").value
-        } catch(e) {
-            anotacion = ""
+        $menu.innerHTML += `${html}${platos}`
+    })
+
+    // Inhabilitar Mi pedido en caso de que no se haya hecho pedido todavia
+    const pedido_id = window.localStorage.getItem("pedido_id")
+    if (!pedido_id) {
+        const $link = document.getElementById("link-mi-pedido")
+        $link.onclick = () => alert("No haz hecho ningun pedido")
+        $link.href = "#"
+    }
+});
+
+const renderizarPlato = (plato, esBebida) => `
+    <div class="seccion_plato">
+        <div class="${esBebida ? "bebida" : "hamburguesa"}">
+            <img src="${plato.imagen}" alt="${plato.nombre}" />
+            <div class="informacion">
+                <p><strong>${plato.nombre}</strong></p>
+                <p>${plato.descripcion}</p>
+                <p>$${plato.precio}</p>
+            </div>
+
+            <div class="sumar_restar">
+                <button onclick="removeToPedido(${plato.id}, event)">-</button>
+                <span class="cantidad">0</span>
+                <button onclick="addToPedido(${plato.id}, event)">+</button>
+            </div>
+        </div>
+        ${!esBebida ? `<input disabled class="anotacion" type="text" placeholder="Anotaciones..." oninput="addAnotaciones(${plato.id},event)" />` : ""}
+    </div>
+`
+
+const encontrarPlato = idPlato => {
+    for (let categoria of menu) {
+        for (let plato of categoria.platos) {
+            if (plato.id == idPlato) return plato
         }
+    }
+}
+
+const addToPedido = (idPlato, event) => {
+    let platoEnPedido = pedido.find(pedidoPlato => pedidoPlato.plato_id == idPlato)
+
+    const seccionPlato = event.target.parentElement.parentElement.parentElement
+
+    if (!platoEnPedido) {
+        const anotacionInput = seccionPlato.querySelector(".anotacion")
 
         const pedidoPlato = {
-            plato_id: id,
+            plato_id: idPlato,
             cantidad: 1,
-            anotacion
         }
 
-        pedidoPlatoEl.querySelector(".cantidad").textContent = 1
+        if (anotacionInput) {
+            anotacionInput.removeAttribute("disabled")
+            pedidoPlato.anotacion = anotacionInput.value
+        } else pedidoPlato.anotacion = ""
 
         pedido.push(pedidoPlato)
-    } else {
-        pedido[platoIndex].cantidad++
-        pedidoPlatoEl.querySelector(".cantidad").textContent = pedido[platoIndex].cantidad
-    }
+        platoEnPedido = pedidoPlato
+    } else platoEnPedido.cantidad++
 
-
+    seccionPlato.querySelector(".cantidad").textContent = platoEnPedido.cantidad
     calcularTotalActual()
 }
 
-function removeCantidad(id, event) {
-    const platoIndex = pedido.findIndex(plato => plato.plato_id == id)
-    const platoExiste = platoIndex != -1
+const removeToPedido = (idPlato, event) => {
+    const platoEnPedido = pedido.find(pedidoPlato => pedidoPlato.plato_id == idPlato)
+    const seccionPlato = event.target.parentElement.parentElement.parentElement
 
-    const pedidoPlatoEl = event.target.parentElement.parentElement.parentElement
+    if (!platoEnPedido) return
 
-    if (platoExiste) {
-        pedido[platoIndex].cantidad--
-        pedidoPlatoEl.querySelector(".cantidad").textContent = pedido[platoIndex].cantidad
+    platoEnPedido.cantidad--
+
+    if (platoEnPedido.cantidad == 0) {
+        pedido = pedido.filter(pedidoPlato => pedidoPlato.plato_id != idPlato)
+
+        const anotacionInput = seccionPlato.querySelector(".anotacion")
+        anotacionInput.setAttribute("disabled", "")
     }
 
-    if (pedido[platoIndex].cantidad <= 0) {
-        pedido = pedido.filter(plato => plato.plato_id != id)
-        pedidoPlatoEl.querySelector(".cantidad").textContent = 0
-
-    }
-
-    console.log(pedido)
+    seccionPlato.querySelector(".cantidad").textContent = platoEnPedido.cantidad
     calcularTotalActual()
 }
 
-function calcularTotalActual() {
+const addAnotaciones = (idPlato, event) => {
+    const platoEnPedido = pedido.find(pedidoPlato => pedidoPlato.plato_id == idPlato)
+    platoEnPedido.anotacion = event.target.value
+}
+
+
+const calcularTotalActual = () => {
     const total = pedido.reduce((acum, plato) => {
         let platoMenu
 
@@ -93,45 +139,3 @@ const enviarPedido = async () => {
         window.location.href = "/movil/pedido-detalle"
     }
 }
-
-document.addEventListener("DOMContentLoaded", async function () {
-    const contenedorMenu = document.querySelector(".contenedor_menu")
-    menu = await obtenerMenu()
-
-    console.log({ menu })
-
-    const renderizarPlato = (plato, esBebida) => `
-        <div class="seccion_plato">
-            <div class="${esBebida ? "bebida" : "hamburguesa"}">
-                <img src="${plato.imagen}" alt="${plato.nombre}" />
-                <div class="informacion">
-                    <p><strong>${plato.nombre}</strong></p>
-                    <p>${plato.descripcion}</p>
-                    <p>$ ${plato.precio}</p>
-                </div>
-
-                <div class="sumar_restar">
-                    <button onclick="removeCantidad(${plato.id}, event)">-</button>
-                    <span class="cantidad">0</span>
-                    <button onclick="addCantidad(${plato.id}, event)">+</button>
-                </div>
-            </div>
-            ${!esBebida ? `<input class="anotacion" type="text" placeholder="Anotaciones..." />` : ""}
-        </div>
-    `
-
-    menu.forEach(categoria => {
-        const html = `<h2>${categoria.nombre}</h2>`
-        const platos = categoria.platos.map(plato => renderizarPlato(plato, categoria.nombre === "Bebidas"))
-
-        contenedorMenu.innerHTML += `${html}${platos}`
-    })
-
-    // Inhabilitar Mi pedido en caso de que no se haya hecho pedido todavia
-    const pedido_id = window.localStorage.getItem("pedido_id")
-    if (!pedido_id) {
-        const $link = document.getElementById("link-mi-pedido")
-        $link.onclick = () => alert("No haz hecho ningun pedido")
-        $link.href = "#"
-    }
-});

@@ -7,6 +7,8 @@ let $nombreCategoria
 let $nuevoItemBtn
 let $elementosCategoria
 
+let indexCategoriaActual
+
 document.addEventListener("DOMContentLoaded", async () => {
     token = window.localStorage.getItem("token")
     categorias = await obtenerCategorias()
@@ -27,8 +29,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 const cambiarHidden = sel => document.querySelector(sel).classList.toggle("hidden")
 
-const editarPlato = id => {  }
-const eliminarPlato = id => {  }
+const eliminarPlato = async id => {
+    const eliminar = confirm("Desea eliminar el plato?")
+
+    if (eliminar) {
+        const res = await fetch(`/api/admin/eliminar-plato?id=${id}`, {
+            method: "DELETE",
+            headers: {
+                'Authorization': token
+            }
+        })
+
+        if (res.ok) {
+            alert("Plato eliminado correctamente");
+            window.location.href = "/escritorio/configuracion/menu"
+        }
+    }
+}
 
 const crearCategoria = async event => {
     const formData = new FormData(event.target)
@@ -50,6 +67,8 @@ const mostrarCategoria = index => {
     $elementosCategoria.innerHTML = ""
     const categoria = categorias[index]
 
+    indexCategoriaActual = index
+
     $nombreCategoria.textContent = categoria.nombre
     $nuevoItemBtn.href = `/escritorio/configuracion/menu/nuevo?id_categoria=${categoria.id}`
 
@@ -64,7 +83,7 @@ const mostrarCategoria = index => {
                         <p>$ ${plato.precio}</p>
 
                         <div class="acciones">
-                            <button onclick="editarPlato(${plato.id})">Editar</button>
+                            <a href="/escritorio/configuracion/menu/editar?plato_id=${plato.id}"><button>Editar</button></a>
                             <button onclick="eliminarPlato(${plato.id})">Eliminar</button>
                         </div>
                     </div>

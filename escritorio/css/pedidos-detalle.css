@@ -12,6 +12,23 @@
     width: 100%;
 }
 
+main header {
+    display: flex;
+    gap: 2rem;
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+
+        select {
+            padding: .5rem 1rem;
+            border-radius: 999px;
+            border: 2px solid gray;
+        }
+    }
+}
+
 .detalle {
     display: flex;
     justify-content: center;

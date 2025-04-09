@@ -83,7 +83,13 @@ main {
                         background: #EEF1F4;
                     }
 
-                    & button:first-child { background-color: yellow; }
+                    & a { 
+                        background-color: yellow; 
+                        border-radius: 10px;
+                        button { 
+                            background-color: transparent !important; 
+                        } 
+                    }
                     & button:last-child { background-color: red; }
                 }
             

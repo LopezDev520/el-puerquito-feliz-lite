@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedidos</title>
+    <title>Configuracion</title>
     <link rel="stylesheet" href="/escritorio/css/layout.css">
-    <link rel="stylesheet" href="/escritorio/css/detalle-movimientos.css">
+    <link rel="stylesheet" href="/escritorio/css/editar-plato.css">
 </head>
 
 <body>
+
     <nav>
         <div>
             <a href="/escritorio/panel/">
@@ -28,7 +29,7 @@
                 </svg>
             </a>
 
-            <a href="/escritorio/pedidos" class="active">
+            <a href="/escritorio/pedidos">
                 <div class="icon-label">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -47,6 +48,7 @@
 
                     Pedidos
                 </div>
+
                 <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.5 1.16659L7.33333 6.99992L1.5 12.8333" stroke="#9BA5B7" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" />
@@ -56,7 +58,7 @@
         </div>
 
         <div>
-            <a href="/escritorio/configuracion">
+            <a href="/escritorio/configuracion" class="active">
                 <div class="icon-label">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -78,58 +80,53 @@
         </div>
     </nav>
 
-    <main class="movement-details">
-        <h1 class="movement-title">Detalles del movimiento</h1>
-        <div class="contenedor-verificacion">
-            <div class="chek-exito">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
-                    <g fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4H5zm14.707 6.707a1 1 0 0 0-1.414-1.414L9 15.586l-3.293-3.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l10-10z"
-                            fill="#65a30d" />
-                    </g>
-                    <span>
-                        ¡Pago exitoso!
-                    </span>
+    <main>
+        <form onsubmit="event.preventDefault(); enviarPlatoModificado(event);">
+            <a href="/escritorio/configuracion/menu/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="m7.825 13l4.9 4.9q.3.3.288.7t-.313.7q-.3.275-.7.288t-.7-.288l-6.6-6.6q-.15-.15-.213-.325T4.426 12t.063-.375t.212-.325l6.6-6.6q.275-.275.688-.275t.712.275q.3.3.3.713t-.3.712L7.825 11H19q.425 0 .713.288T20 12t-.288.713T19 13z" />
                 </svg>
+                Volver
+            </a>
+            <h1>Editando plato</h1>
+            <div class="contenedor-imagen">
+                <img id="plato-img" src="https://placehold.co/400x400" alt="">
 
+                <label>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" d="M7 8v8a5 5 0 1 0 10 0V6.5a3.5 3.5 0 1 0-7 0V15a2 2 0 0 0 4 0V8" />
+                    </svg>
+                    <input type="file" name="imagen" id="imagen-input" name="imagen" accept="image/*"
+                        oninput="mostrarImagen(event);">
+                </label>
             </div>
-            <div class="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 512 512">
-                    <path fill="#333333"
-                        d="m39.93 149.25l197.4 95.32c5.14 2.45 12 3.73 18.79 3.73s13.65-1.28 18.78-3.73l197.4-95.32c10.38-5 10.38-13.18 0-18.2L274.9 35.73c-5.13-2.45-12-3.73-18.78-3.73s-13.65 1.28-18.79 3.73l-197.4 95.32c-10.38 5.02-10.38 13.18 0 18.2" />
-                    <path fill="#333333"
-                        d="M472.3 246.9s-36.05-17.38-40.83-19.72s-6.07-2.21-11.09.12s-145.6 70.23-145.6 70.23a45.7 45.7 0 0 1-18.78 3.74c-6.77 0-13.65-1.29-18.78-3.74c0 0-136.85-66-143.27-69.18C87 225 85 225 78.67 228l-39 18.78c-10.38 5-10.38 13.19 0 18.2L237.1 360.3c5.13 2.45 12 3.73 18.78 3.73s13.65-1.28 18.79-3.73l197.4-95.3c10.61-4.92 10.61-13.08.23-18.1" />
-                    <path fill="#333333"
-                        d="M472.3 362.75s-36.05-17.38-40.83-19.75s-6.07-2.21-11.09.12S274.9 413.5 274.9 413.5a45.7 45.7 0 0 1-18.78 3.73c-6.77 0-13.65-1.28-18.79-3.73c0 0-136.85-66-143.26-69.18c-7-3.39-9-3.39-15.29-.35l-39 18.78c-10.39 5-10.39 13.18 0 18.2l197.4 95.32c5.13 2.56 12 3.73 18.78 3.73s13.65-1.28 18.78-3.73L472.18 381c10.5-5.07 10.5-13.23.12-18.25" />
-                </svg>
+            <div class="contenedor-info">
+                <input type="hidden" name="id">
+                <label>
+                    <p>Nombre</p>
+                    <input type="text" name="nombre">
+                </label>
+                <label>
+                    <p>Descripcion</p>
+                    <input type="text" name="descripcion">
+                </label>
+                <label>
+                    <p>Precio</p>
+                    <input type="number" name="precio">
+                </label>
+                <label>
+                    <p>Categoria</p>
+                    <select name="categoria"></select>
+                </label>
             </div>
 
-        </div>
-        <div class="detail">
-            <label>Cliente</label>
-            <span id="nombre-cliente">Elver</span>
-        </div>
-        <div class="detail">
-            <label>Mesa</label>
-            <span id="num-mesa">4</span>
-        </div>
-        <div class="detail">
-            <label>Valor del Pedido</label>
-            <span id="total">$ 53.200</span>
-        </div>
-        <div class="detail">
-            <label>Fecha</label>
-            <span id="fecha">12/03/2025</span>
-        </div>
-    
-        <a href="/escritorio/pedidos/" class="status">
-            Listo
-        </a>
+            <button>Guardar</button>
+        </form>
     </main>
 
-    <script src="/escritorio/js/detalle-movimiento.js"></script>
-
+    <script src="/escritorio/js/editar-plato.js"></script>
 </body>
 
 </html>
